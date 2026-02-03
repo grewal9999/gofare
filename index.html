@@ -1,34 +1,245 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>GoFare – Travel Discovery Platform</title>
-  <meta name="description" content="GoFare helps travelers compare flights and discover hotels and travel insurance.">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GoFare — Travel Discovery Made Simple</title>
+  <meta name="description" content="GoFare is a flight metasearch experience. Compare options and continue to the airline or trusted partners to complete booking." />
+  <meta name="theme-color" content="#0b1220" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="GoFare — Travel Discovery Made Simple" />
+  <meta property="og:description" content="Compare flight options and continue to the airline or trusted partners to complete booking." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://gofare.co/" />
+
+  <style>
+    :root{
+      --bg:#ffffff;
+      --text:#0b1220;
+      --muted:#4b5563;
+      --border:#e5e7eb;
+      --card:#f9fafb;
+      --brand:#0b1220;
+      --brand2:#111827;
+      --link:#1d4ed8;
+      --ok:#065f46;
+      --warn:#92400e;
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text);
+      background:var(--bg);
+      line-height:1.5;
+    }
+    a{color:var(--link); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:980px; margin:0 auto; padding:28px 18px 56px}
+    header{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0 18px; border-bottom:1px solid var(--border);
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.2px;
+    }
+    .logo{
+      width:34px; height:34px; border-radius:10px;
+      background:linear-gradient(135deg,#0b1220,#334155);
+      display:inline-block;
+    }
+    nav{display:flex; gap:14px; flex-wrap:wrap; font-weight:600}
+    nav a{color:var(--brand2)}
+    .hero{padding:34px 0 14px}
+    .hero h1{margin:0 0 10px; font-size:34px; line-height:1.15}
+    .hero p{margin:0; color:var(--muted); max-width:72ch}
+    .pillrow{display:flex; gap:10px; flex-wrap:wrap; margin-top:18px}
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      border:1px solid var(--border); background:#fff;
+      padding:10px 12px; border-radius:999px; font-weight:700; font-size:13px;
+    }
+    .grid{display:grid; grid-template-columns:1fr; gap:14px; margin:18px 0}
+    @media (min-width: 860px){
+      .grid{grid-template-columns:1.15fr .85fr}
+    }
+    .card{
+      border:1px solid var(--border);
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:16px;
+    }
+    .card h2{margin:0 0 8px; font-size:18px}
+    .card p{margin:0; color:var(--muted)}
+    .steps{display:grid; gap:10px; margin-top:10px}
+    .step{
+      background:#fff; border:1px solid var(--border);
+      border-radius:14px; padding:12px;
+    }
+    .step b{display:block; margin-bottom:4px}
+    .badge{
+      display:inline-flex; align-items:center;
+      border:1px solid var(--border);
+      background:#fff;
+      padding:6px 10px; border-radius:999px;
+      font-size:12px; font-weight:800;
+    }
+    .badge.ok{color:var(--ok)}
+    .badge.warn{color:var(--warn)}
+    .sponsor-title{display:flex; align-items:center; justify-content:space-between; gap:12px}
+    .sponsor-title h2{margin:0}
+    .sponsor-card{
+      margin-top:10px;
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:14px;
+    }
+    .sponsor-card .name{font-weight:900; font-size:15px}
+    .sponsor-card .desc{color:var(--muted); margin-top:4px}
+    .sponsor-card .actions{display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-top:10px}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      border-radius:12px; padding:10px 12px;
+      background:var(--brand); color:#fff; font-weight:900; font-size:13px;
+      border:1px solid var(--brand);
+    }
+    .btn:hover{filter:brightness(1.05); text-decoration:none}
+    .btn.secondary{
+      background:#fff; color:var(--brand2); border:1px solid var(--border);
+    }
+    .tiny{font-size:12px; color:var(--muted)}
+    .divider{height:1px; background:var(--border); margin:16px 0}
+    footer{
+      margin-top:28px;
+      border-top:1px solid var(--border);
+      padding-top:18px;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .footlinks{display:flex; gap:14px; flex-wrap:wrap; margin-top:10px}
+    .kicker{font-weight:900; letter-spacing:.18px; color:var(--brand2); font-size:12px; text-transform:uppercase}
+    .callout{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:14px;
+      margin-top:12px;
+    }
+    .callout b{display:block; margin-bottom:6px}
+  </style>
 </head>
-<body style="font-family: Arial, sans-serif; max-width: 900px; margin: 40px auto; line-height: 1.6;">
-  <h1>GoFare — Travel Discovery Made Simple</h1>
 
-  <p>
-    GoFare is a travel discovery platform that helps users compare flight options and plan trips.
-    We partner with trusted travel providers to recommend relevant services such as hotels and travel insurance.
-  </p>
+<body>
+  <div class="wrap">
 
-  <h3>Sponsored</h3>
-  <p>
-    <strong>Travel Insurance – Protect Your Trip</strong><br>
-    Covers medical emergencies, delays, and cancellations.
-  </p>
-  <p><a href="#">View coverage</a></p>
+    <header>
+      <div class="brand">
+        <span class="logo" aria-hidden="true"></span>
+        <span>GoFare</span>
+      </div>
 
-  <hr>
+      <nav aria-label="Primary">
+        <a href="/partners.html">Partners</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </header>
 
-  <p>
-    <strong>Advertising Disclosure:</strong>
-    Some links on GoFare are sponsored. We may earn a commission when users click on partner links.
-  </p>
+    <section class="hero">
+      <div class="kicker">Metasearch • Clickout</div>
+      <h1>Travel discovery made simple.</h1>
+      <p>
+        GoFare helps you compare flight options and plan your trip. When you’re ready, you’ll
+        continue to the airline or a trusted partner to complete booking.
+      </p>
 
-  <p>
-    <a href="mailto:admin@gofare.co">Contact</a>
-  </p>
+      <div class="pillrow" aria-label="Highlights">
+        <span class="pill">✅ Compare options fast</span>
+        <span class="pill">🔒 No ticket sales here</span>
+        <span class="pill">↗️ Book on airline/partner</span>
+      </div>
+    </section>
+
+    <section class="grid" aria-label="Main content">
+      <div class="card">
+        <h2>How GoFare works</h2>
+        <p>Three steps, zero confusion.</p>
+
+        <div class="steps">
+          <div class="step">
+            <b>1) Search & compare</b>
+            We aggregate prices and schedules from travel providers.
+          </div>
+          <div class="step">
+            <b>2) Review details</b>
+            See key itinerary, baggage, and timing details.
+          </div>
+          <div class="step">
+            <b>3) Continue to book</b>
+            You complete booking on the airline or partner website. Prices/availability may change.
+          </div>
+        </div>
+
+        <div class="callout">
+          <b>Important</b>
+          GoFare is a search experience. We don’t issue tickets or take traveler payments on this site.
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="sponsor-title">
+          <h2>Sponsored</h2>
+          <span class="badge warn">Disclosure</span>
+        </div>
+
+        <div class="sponsor-card">
+          <div class="name">Travel Insurance — Protect Your Trip</div>
+          <div class="desc">Covers medical emergencies, delays, and cancellations.</div>
+
+          <div class="actions">
+            <a class="btn" href="#" rel="sponsored noopener">View coverage</a>
+            <a class="btn secondary" href="/advertising.html">How sponsorship works</a>
+          </div>
+
+          <div class="tiny">
+            Sponsored • We may earn a commission when users click partner links.
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="tiny">
+          Tip: If you’re an airline, OTA, or metasearch partner, visit <a href="/partners.html">Partners</a>.
+          Private demo available on request.
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>
+        © <span id="y"></span> GoFare • Travel discovery & comparison.
+      </div>
+
+      <div class="footlinks" aria-label="Footer">
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+        <a href="/advertising.html">Advertising</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </div>
+
+      <div class="tiny" style="margin-top:10px;">
+        Booking is completed on third-party sites. GoFare does not sell tickets.
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
