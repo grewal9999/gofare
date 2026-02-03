@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About GoFare</title>
+  <meta name="description" content="GoFare is a flight metasearch experience focused on transparent comparison and clean clickout booking." />
+  <style>
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;line-height:1.5;color:#0b1220;background:#fff}
+    a{color:#1d4ed8;text-decoration:none} a:hover{text-decoration:underline}
+    .wrap{max-width:920px;margin:0 auto;padding:28px 18px 56px}
+    header{display:flex;justify-content:space-between;align-items:center;padding:14px 0 18px;border-bottom:1px solid #e5e7eb}
+    nav{display:flex;gap:14px;flex-wrap:wrap;font-weight:700}
+    h1{margin:18px 0 8px;font-size:28px}
+    p{margin:0 0 10px;color:#4b5563;max-width:80ch}
+    .card{border:1px solid #e5e7eb;background:#f9fafb;border-radius:18px;padding:16px;margin-top:14px}
+    .kicker{font-weight:900;letter-spacing:.18px;color:#111827;font-size:12px;text-transform:uppercase}
+    footer{margin-top:28px;border-top:1px solid #e5e7eb;padding-top:18px;color:#4b5563;font-size:13px}
+    .footlinks{display:flex;gap:14px;flex-wrap:wrap;margin-top:10px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div style="font-weight:900;"><a href="/" style="color:#0b1220;text-decoration:none;">GoFare</a></div>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/partners.html">Partners</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <div class="kicker">About</div>
+    <h1>GoFare</h1>
+    <p>
+      GoFare is a travel discovery and flight comparison experience. We help travelers evaluate options quickly and
+      transparently.
+    </p>
+    <p>
+      GoFare is a <b>metasearch</b> experience: when you click “Continue on airline/partner,” you leave GoFare and complete
+      booking on the third-party website. We do not issue tickets or collect traveler payments on this site.
+    </p>
+
+    <div class="card">
+      <div class="kicker">Contact</div>
+      <p>
+        For general inquiries: <b>hello@gofare.co</b><br />
+        For partners: <b>partners@gofare.co</b>
+      </p>
+    </div>
+
+    <footer>
+      <div>© <span id="y"></span> GoFare</div>
+      <div class="footlinks">
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+        <a href="/advertising.html">Advertising</a>
+        <a href="/contact.html">Contact</a>
+      </div>
+    </footer>
+  </div>
+  <script>document.getElementById("y").textContent=new Date().getFullYear();</script>
+</body>
+</html>
